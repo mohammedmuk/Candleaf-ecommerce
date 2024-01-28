@@ -37,6 +37,8 @@ This project is an eCommerce website that sells candles. It includes a Django ba
 - `/api/info/` (GET, POST - authentication required)
 - `/api/info/1` (GET, PATCH - authentication required)
 - `/api/completed/` (GET, POST - authentication required)
+- `/api/token/` (POST - to generate a token)
+- `/auth/users/` (POST, GET - to create a new user)
 
 ## Authentication
 JWT authentication is used in this project. To make an API call, include the following in the header:
