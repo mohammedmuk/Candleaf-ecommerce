@@ -13,6 +13,7 @@ class Products(models.Model):
 class Customers(models.Model):
     owner = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     order = models.ManyToManyField(Products, through='Orders')
+    status = models.BooleanField(default=False)
 
 
     def __str__(self):
@@ -36,10 +37,3 @@ class Info(models.Model):
     address = models.CharField(max_length=200)
     postal_code = models.IntegerField()
     state = models.CharField(max_length=100)
-
-
-class CompletedOrder(models.Model):
-    user = models.ForeignKey(Customers, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.user.owner.username

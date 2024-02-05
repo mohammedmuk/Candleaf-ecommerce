@@ -34,17 +34,18 @@ async function getUser(info){
 }
 
 async function confirm(id){
-    let response = await fetch(`${main_url}/api/completed/`, {method : 'POST', headers : {
+    console.log(id);
+    let response = await fetch(`${main_url}/api/customers/${id}/`, {method : 'PATCH', headers : {
         Accept : 'application/json, text/plagin, */*',
         'Content-Type' : 'application/json',
         'Authorization' : `Bearer ${jwt}`
     }, body : JSON.stringify(
         {
-            "user" : id
+            "status" : true
         }
     )})
     if (response.status == 401) window.location.href = `${main_url}/accounts/login`
-    else if (response.status == 201) {
+    else if (response.status == 200) {
         window.location.href = `${main_url}/confirm`
     }
 }

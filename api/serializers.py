@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from . import models
 from django.contrib.auth.models import User
+from rest_framework.validators import UniqueValidator
 
 
 class ProductsSerializer(serializers.ModelSerializer):
@@ -21,7 +22,7 @@ class CustomersSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Customers
-        fields = ['id', 'owner', 'order', 'total_price']
+        fields = ['id', 'owner', 'order', 'total_price', 'status']
 
 
     def get_total_price(self, obj):
@@ -51,11 +52,3 @@ class InfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Info
         fields = ['owner', 'first_name', 'last_name', 'phone', 'address','postal_code', 'state']
-
-
-class CompletedOrderSerializer(serializers.ModelSerializer):
-    user = CustomersSerializer
-    
-    class Meta:
-        model = models.CompletedOrder
-        fields = ['user']
