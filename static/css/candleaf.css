@@ -9,11 +9,14 @@ html{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
+}
   body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-      sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
   }
 
   ::-webkit-scrollbar {
@@ -87,7 +90,6 @@ html{
   header .second-icon a {
     text-decoration: none;
   }
-}
 header .second-icon i {
   color: #272727;
   font-size: 20px;
@@ -186,7 +188,7 @@ main .home-one .card-bag a {
   width: 100%;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   gap: 20px;
   padding-top: 20px;
   justify-items: center;
@@ -400,6 +402,9 @@ footer .information .detalis p {
 
 /* Start New page  */
 /* Start Product  */
+
+
+
 .product {
   display: flex;
   justify-content: center;
